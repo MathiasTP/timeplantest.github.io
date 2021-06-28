@@ -1,6 +1,6 @@
 <html>
 <body>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <h1>HybridWebView Test</h1>
     <br />
     Enter name: <input type="text" id="name">
