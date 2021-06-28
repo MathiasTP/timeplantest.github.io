@@ -16,7 +16,7 @@
         function invokeCSCode(data) {
             try {
                 log("Sending Data:" + data);
-                invokeCSharpAction(data|hej);
+                invokeCSharpAction(data);
             }
             catch (err) {
                 log(err);
