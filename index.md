@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <meta http-equiv="refresh" content="15">
+    <meta http-equiv="refresh" content="120">
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
