@@ -39,6 +39,7 @@
 
         function listCalendarsResult(result) {
             selectedCalenderId = result[0].id;
+        
             log('Calendars loaded: ' + JSON.stringify(result))
         }        
 
