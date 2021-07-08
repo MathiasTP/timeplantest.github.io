@@ -32,7 +32,10 @@
         log('Starting application')
 
         var selectedCalenderId = null;
-
+        
+        setTimeout(function() {
+            CalendarIntegration.listCalendars();
+        }, 100);
 
 
         function addEvent(eventName) {
