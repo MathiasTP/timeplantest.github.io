@@ -1,26 +1,63 @@
 <html>
+
+<head>
+    <meta http-equiv="refresh" content="15">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+</head>
+
 <body>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <h1>HybridWebView Test</h1>
+    <br /> Enter event name: <input type="text" id="name">
     <br />
-    Enter name: <input type="text" id="name">
     <br />
+    <button type="button" onclick="javascript: addEvent($('#name').val())">Add event</button>
+    <button type="button" onclick="javascript: listEvents()">List events</button>
     <br />
-    <button type="button" onclick="javascript: invokeCSCode($('#name').val());">Invoke C# Code</button>
-    <br />
-    <p id="result">Result:</p>
-    <script type="text/javascript">function log(str) {
-            $('#result').text($('#result').text() + " " + str);
+    <p id="result">Events:</p>
+    <script type="text/javascript">
+        function log(str) {
+            $('#result').html($('#result').html() + "<br/>" + str);
         }
 
-        function invokeCSCode(data) {
-            try {
-                log("Sending Data:" + data);
-                invokeCSharpAction(data);
-            }
-            catch (err) {
-                log(err);
-            }
-        }</script>
+        log('Starting application')
+
+        var selectedCalenderId = null;
+
+        setTimeout(function() {
+            CalendarIntegration.listCalendars();
+        }, 100);
+
+        function listCalendarsResult(result) {
+            selectedCalenderId = result[0].id;
+
+            log('Calendars loaded: ' + JSON.stringify(result))
+        }
+
+        function addEvent(eventName) {
+            CalendarIntegration.addEvent(selectedCalenderId, eventName);
+
+            $('#name').val('');
+
+            log('Event added to calendar');
+        }
+
+        function listEvents() {
+            CalendarIntegration.listEvents(selectedCalenderId);
+        }
+
+        function listEventsResult(result) {
+            log('Events in selected calendar (' + selectedCalenderId + '): ' + JSON.stringify(result));
+        }
+
+        function timeHasPassedEvent(time) {
+            log('Event from app: ' + time);
+        }
+    </script>
 </body>
+
 </html>
