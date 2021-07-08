@@ -14,11 +14,14 @@
     <h1>HybridWebView Test</h1>
     <br /> Enter event name: <input type="text" id="name">
     <br /> Enter eventId for event to delete: <input type="text" id="eventId">
+    <br /> Enter calendarId for events to list: <input type="text" id="calendarId">    
     <br />
     <br />
     <button type="button" onclick="javascript: addEvent($('#name').val())">Add event</button>
-    <button type="button" onclick="javascript: listEvents()">List events</button>
-    <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">List events</button>
+     <br />
+    <br />
+    <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">Delete event</button>
+    <button type="button" onclick="javascript: listEvents($('#calendarId').val())">List events for calender id</button>
     <br />
     <p id="result">Events:</p>
     <script type="text/javascript">
@@ -56,8 +59,8 @@
             log('Event added to calendar');
         }        
 
-        function listEvents() {
-            CalendarIntegration.listEvents(selectedCalenderId);
+        function listEvents(id) {
+            CalendarIntegration.listEvents(id);
         }
 
         function listEventsResult(result) {
