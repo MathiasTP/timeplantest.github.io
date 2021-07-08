@@ -39,7 +39,7 @@
         }
 
         function addEvent(eventName) {
-            CalendarIntegration.addEvent("9", "3", eventName, "test event fra app", "hej med dig", "Jan 1, 2021", "Jan 2, 2021", "Timeplan");
+            CalendarIntegration.addEvent(eventName);
 
             $('#name').val('');
 
