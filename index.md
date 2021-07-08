@@ -37,6 +37,11 @@
             CalendarIntegration.listCalendars();
         }, 100);
 
+        function listCalendarsResult(result) {
+            selectedCalenderId = result[0].id;
+            log('Calendars loaded: ' + JSON.stringify(result))
+        }        
+
 
         function addEvent(eventName) {
             CalendarIntegration.addEvent("9", "3", eventName, "test event fra app", "Jan 1, 2021", "Jan 2, 2021", "Timeplan");
