@@ -19,7 +19,7 @@
         <br /> Enter event start date ex:("Jan 1, 2021"): <input type="text" id="eventStartdate">
         <br /> Enter event end date ex:("Jan 1, 2021"): <input type="text" id="eventEnddate">
         <br />
-        <button type="button" onclick="javascript: addEvent($('#name').val(), $('#eventId').val(), $('#eventDescription').val(), $('#eventStartdate').val(), $('#eventEnddate').val(), $('#eventCalendarId').val())">Add event</button>
+        <button type="button" onclick="javascript: addEvent($('#name').val(), $('#eventId').val(), $('#eventDescription').val(), new Date(), $('#eventEnddate').val(), $('#eventCalendarId').val())">Add event</button>
     <br />
     <br /> Enter eventId for event to delete: <input type="text" id="eventId">
         <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">Delete event</button>
