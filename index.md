@@ -19,18 +19,19 @@
         <br /> Enter event start date ex:("Jan 1, 2021"): <input type="text" id="eventStartdate">
         <br /> Enter event end date ex:("Jan 1, 2021"): <input type="text" id="eventEnddate">
         <br />
+        <button type="button" onclick="javascript: addEvent($('#name').val(), $('#eventId').val(), $('#eventDescription').val(), $('#eventStartdate').val(), $('#eventEnddate').val(), $('#eventCalendarId').val())">Add event</button>
     <br />
     <br /> Enter eventId for event to delete: <input type="text" id="eventId">
+        <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">Delete event</button>
         <br />
     <br />
     <br /> Enter calendarId for events to list: <input type="text" id="calendarId">    
+        <button type="button" onclick="javascript: listEvents($('#calendarId').val())">List events for calender id</button>
     <br />
     <br />
-    <button type="button" onclick="javascript: addEvent($('#name').val(), $('#eventId').val(), $('#eventDescription').val(), $('#eventStartdate').val(), $('#eventEnddate').val(), $('#eventCalendarId').val())">Add event</button>
      <br />
     <br />
-    <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">Delete event</button>
-    <button type="button" onclick="javascript: listEvents($('#calendarId').val())">List events for calender id</button>
+
     <br />
     <p id="result">Events:</p>
     <script type="text/javascript">
