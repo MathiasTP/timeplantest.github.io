@@ -12,6 +12,7 @@
 <body>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <h1>HybridWebView Test</h1>
+    <br /><button onclick="javascript: location.reload()">Refresh</button>
     <br /> Enter event name: <input type="text" id="name">
         <br /> Enter event id: <input type="text" id="eventId">
             <br /> Enter calendar id for event: <input type="text" id="eventCalendarId">
