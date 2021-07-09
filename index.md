@@ -13,11 +13,20 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <h1>HybridWebView Test</h1>
     <br /> Enter event name: <input type="text" id="name">
+        <br /> Enter event id: <input type="text" id="eventId">
+            <br /> Enter calendar id for event: <input type="text" id="eventCalendarId">
+        <br /> Enter event description: <input type="text" id="eventDescription">
+        <br /> Enter event start date ex:("Jan 1, 2021"): <input type="text" id="eventStartdate">
+        <br /> Enter event end date ex:("Jan 1, 2021"): <input type="text" id="eventEnddate">
+        <br />
+    <br />
     <br /> Enter eventId for event to delete: <input type="text" id="eventId">
+        <br />
+    <br />
     <br /> Enter calendarId for events to list: <input type="text" id="calendarId">    
     <br />
     <br />
-    <button type="button" onclick="javascript: addEvent($('#name').val())">Add event</button>
+    <button type="button" onclick="javascript: addEvent($('#name').val(), $('#eventId').val(), $('#eventDescription').val(), $('#eventStartdate').val(), $('#eventEnddate').val(), $('#eventCalendarId').val())">Add event</button>
      <br />
     <br />
     <button type="button" onclick="javascript: deleteEvent($('#eventId').val())">Delete event</button>
@@ -44,8 +53,8 @@
         }        
 
 
-        function addEvent(eventName) {
-            CalendarIntegration.addEvent("9", "3", eventName, "test event fra app", "Jan 1, 2021", "Jan 2, 2021", "Timeplan");
+        function addEvent(eventName, eventId, eventDescrip, eventStart, eventEnd, eventCalendarid) {
+            CalendarIntegration.addEvent(eventCalendarid, eventId, eventName, eventDescrip, eventStart, eventEnd, "Timeplan");
 
             $('#name').val('');
 
