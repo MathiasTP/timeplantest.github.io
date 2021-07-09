@@ -55,7 +55,7 @@
 
 
         function addEvent(eventName, eventId, eventDescrip, eventStart, eventEnd, eventCalendarid) {
-            CalendarIntegration.addEvent(eventCalendarid, eventId, eventName, eventDescrip, eventStart, eventEnd, "Timeplan", "10");
+            CalendarIntegration.addEvent(eventCalendarid, eventId, eventName, eventDescrip, eventStart, eventEnd, "Timeplan");
 
             $('#name').val('');
 
